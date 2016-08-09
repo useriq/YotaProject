@@ -1,0 +1,1 @@
+ java -Dfile.encoding=UTF-8 -classpath "mobilebank.jar;libs/*;libs/cucumber/*;libs/selenium-2.53.0/*;libs/selenium-2.53.0/libs/*" cucumber.api.cli.Main --monochrome --plugin json:reports/yota.json --plugin html:reports --glue tests.steps src\test\java\yota\features

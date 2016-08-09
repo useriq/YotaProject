@@ -1,0 +1,98 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+    <meta charset="utf-8" />
+    <title>Yota test slider</title>
+    <link rel="stylesheet" href="sliders.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="knockout.debug.js"></script>
+    <script type="text/javascript" src="sliders.js"></script>
+</head>
+<body>
+<div class="account-content" id="sliders">
+    <div class="aside">
+        <div class="account-money">
+            <dl class="clearfix">
+                <dt><span>Баланс</span></dt>
+                <dd id="balance-holder"><span data-bind="text: balance">27916</span> руб.</dd>
+            </dl>
+
+            <div id="instant-payment">
+                
+                <div class="line">
+                    <h3 class="title">Пополнить счет</h3>
+
+                    <div class="form">
+
+                        <div class="payment-amount rounded input-holder overlabel-wrapper">
+                            <label class="overlabel overlabel-apply" for="amount" style="text-indent: 0px; cursor: text;"></label> <!--It will be filled in js.-->
+                            <input type="text" data-bind="value: amount" name="amount" id="amount" /> <span class="currency">руб.</span>
+                        </div>
+                        <div class="error amount-error hidden"></div>
+                    </div>
+                    <div class="actions">
+                        <a class="btn auth-check submit" data-bind="click: doPayment" href="javascript:void(0);">Пополнить
+                            счет</a>
+                        <a class="btn auth-check submit" data-bind="click: doReset" href="javascript:void(0);">Сброс</a>
+
+                    </div>
+                </div>
+                <div style="display: none;" class="white-overlay loader"></div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="devices-list">
+        <div class="hint hint_pos_current-conditions">
+            <div class="hint-inner">
+                <div class="header-container"><h3>Текущие условия</h3></div>
+                <div class="content-container">
+                    <div class="tariff unavailable">
+                        <div class="tarriff-info">
+                            <div class="time">
+
+                                <strong>0</strong> <span>дней осталось</span>
+
+                            </div>
+                            <div class="speed"><strong data-bind="text: previousSpeed">64</strong> <span data-bind="text: previousText">Кбит/сек (макс.)</span></div>
+                            <div class="cost no-arrow"><strong data-bind="text: previousCost">0</strong><span> руб. в месяц</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slider-inner ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+                <a href="#" id="slider-handle" class="ui-slider-handle ui-state-default ui-corner-all"></a>
+            </div>
+            <div class="decrease"><a class="icon" href="#" data-bind="click: moveLeft"></a></div>
+            <div class="slider-scale"></div>
+            <div class="gradient-container">
+                <div class="gradient"></div>
+            </div>
+            <div class="increase"><a class="icon" href="#" data-bind="click: moveRight"></a></div>
+        </div>
+        <div class="main-offer-container line">
+            <div class="header-container"><h3 class="highlighted">Новые условия</h3></div>
+            <div class="content-container">
+                <div class="main-offer">
+                    <div class="tariff">
+                        <div class="tarriff-info">
+                            <div class="time"><strong>30</strong> <span>дней останется</span></div>
+                            <div class="speed"><strong data-bind="text: currentSpeed">64</strong>
+                                <span data-bind="text: currentText">Кбит/сек (макс.)</span></div>
+                            <div class="cost"><strong data-bind="text: currentCost">0</strong> <span>руб. в месяц</span>
+                            </div>
+                            <a data-bind=" css: addOferButtonClasses, click: doPurchase" href="#" class="btn disabled">Подключить</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body></html>
